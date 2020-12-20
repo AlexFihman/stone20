@@ -9,36 +9,6 @@ int main()
 {
     int size = 1000;
 
-    /*
-    square* s = new square(size);
-    int i,j;
-
-    for (i=0;i<size;i++) {
-        for (j=0;j<size;j++) {
-                s->setValue(i,j,true);
-        }
-    }
-
-    for (i=0;i<size;i++) {
-        for (j=0;j<size;j++) {
-                if ((i+j)%2)
-                    s->setValue(i,j,false);
-        }
-    }
-
-    s->setValue(2,5,true);
-    s->setValue(2,6,true);
-    s->setValue(2,7,true);
-
-            cout << "s" << endl;
-            for (int i=0;i<size;i++) {
-                for (int j=0;j<size;j++) cout << s->getValue(i,j);
-                cout << endl;
-            }
-    char z;
-    cin >> z;
-    */
-
     bool debug = false;
     int* result = new int[size*size];
     for (int i=0;i<size;i++)
@@ -119,8 +89,7 @@ int main()
                     xyt->setValue(j,i,true);
 
                     result[i*size+j] = height;
-                    if (i != j) result[j*size+i] = height;
-                    //cout << "height=" << height << "\t" << "i=" << i << "\t" << "j=" << j << " filled: " << filled << endl;
+                    if (i != j) result[j*size+i] = height;                    
                 } else {
                     j++;
                 }
@@ -131,18 +100,6 @@ int main()
         delete y;
         delete xy;
 
-        /*
-        if (xt->getValue(0,3))
-            cout << "bummer" << endl;
-
-        if (debug) {
-            cout << "xt" << endl;
-            for (int i=0;i<size;i++) {
-                for (int j=0;j<size;j++) cout << xt->getValue(i,j);
-                cout << endl;
-            }
-        }
-        */
         height++;
         if (height%100==0) 
 	    cout << "height: " << height << " filled: " << filled << endl;
